@@ -1,0 +1,38 @@
+#admin-content .content-table {
+  border: 1px solid #000;
+  width: 100%;
+  margin: 0 0 20px;
+}
+
+#admin-content .content-table thead {
+  color: #fff;
+  background-color: #333;
+}
+#admin-content .content-table th {
+  padding: 10px;
+  border: 1px solid #fff;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#admin-content .content-table tbody {
+  color: #333;
+}
+
+#admin-content .content-table tbody tr {
+  background-color: #e7e7e7;
+}
+#admin-content .content-table tbody td {
+  padding: 10px;
+  border: 1px solid #fff;
+  text-align: center;
+}
+
+#admin-content .content-table tbody tr:nth-child(2n) {
+  background-color: transparent;
+}
+
+.content-table svg {
+  color: #222;
+}

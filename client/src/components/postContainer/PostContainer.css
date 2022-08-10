@@ -1,0 +1,74 @@
+.post-content {
+  border-bottom: 1px solid #d1d1d1;
+  padding: 0 0 30px;
+  margin-bottom: 30px;
+}
+
+.post-content .post-img {
+  border: 3px solid #e7e7e7;
+  display: block;
+  height: 145px;
+  overflow: hidden;
+  transition: border 0.3s;
+}
+
+.post-content h3 {
+  font-size: 21px;
+  line-height: 28px;
+  font-weight: 600;
+  margin: 0 0 7px;
+  text-transform: capitalize;
+}
+#main-content .post-content h3 a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.post-content .post-information span {
+  color: #606060;
+  font-size: 12px;
+  text-transform: capitalize;
+  margin: 0 12px 5px 0;
+  display: inline-block;
+}
+
+#main-content .post-content p,
+#main-content .single-post p {
+  color: #666;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin: 0 0 10px;
+}
+
+.post-content .post-information svg {
+  color: #1e90ff;
+  margin-right: 1px;
+}
+#main-content .post-content .post-information svg {
+  color: #1e90ff;
+  margin-right: 7px;
+}
+
+.post-content a.read-more {
+  color: #fff;
+  background-color: #1e90ff;
+  font-size: 12px;
+  text-transform: capitalize;
+  padding: 3px 8px;
+  border-radius: 2px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+#main-content .post-content a.read-more:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+#main-content .post-content img {
+  width: 100%;
+}
+
+.pull-right {
+  float: right !important;
+}

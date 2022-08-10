@@ -1,0 +1,53 @@
+#sidebar .recent-post {
+  border-bottom: 1px solid #e7e7e7;
+  padding: 0 0 15px;
+  margin: 0 0 15px;
+}
+
+#sidebar .recent-post .post-img {
+  display: inline-block;
+  width: 33%;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  vertical-align: top;
+  transition: border 0.3s;
+}
+
+#sidebar .recent-post .post-content {
+  width: 65%;
+  display: inline-block;
+  border: none;
+  padding: 0 0 0 7px;
+  margin: 0;
+}
+
+#sidebar .recent-post h5 {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 5px;
+}
+
+#sidebar .recent-post span {
+  color: #666;
+  font-size: 11px;
+  display: inline-block;
+  margin: 0 5px 10px 0;
+}
+
+#sidebar .recent-post a.read-more {
+  color: #666;
+  background-color: rgba(0, 0, 0, 0.09);
+  width: 65px;
+  font-size: 11px;
+  text-align: center;
+  padding: 0;
+  display: block;
+  transition: all 0.3s;
+}
+
+#sidebar .recent-post a.read-more:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#sidebar .recent-post .post-img img {
+  width: 100%;
+}

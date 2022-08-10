@@ -1,0 +1,455 @@
+{
+	"tables": {
+		"889080e5-f7c6-4055-a0c4-b5d921c1a56c": {
+			"id": "889080e5-f7c6-4055-a0c4-b5d921c1a56c",
+			"visible": true,
+			"name": "users",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "425e12a2-13dd-4b2c-85f6-ec5e27ff0458",
+					"name": "_id",
+					"datatype": "ObjectId",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "83e28d3f-85bf-4c69-8a56-1de48f8efe5e",
+					"name": "first_name",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "ccd8a4d6-053c-4a56-95b1-ea2250b28473",
+					"name": "last_name",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "d82da2c3-b35f-49ee-b0f0-c95e7e5d44d7",
+					"name": "username",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "347e3a25-0d39-47fd-833d-ea6e154f924f",
+					"name": "password",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "23302709-99d0-45d6-a7a3-ae62082e6123",
+					"name": "role",
+					"datatype": "Boolean",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				}
+			],
+			"relations": [
+				"ddd77549-873e-4eb4-9f73-5e3832872194"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "6894ddd8-341c-42eb-8c02-2405fbfd547e",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "93805b3c-14b9-43c1-a66b-92b77602f807",
+							"colid": "425e12a2-13dd-4b2c-85f6-ec5e27ff0458"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"internalColumnIdRef": "",
+			"others": ""
+		},
+		"9384705a-e136-4217-9be5-2d5ea183ac7d": {
+			"id": "9384705a-e136-4217-9be5-2d5ea183ac7d",
+			"visible": true,
+			"name": "category",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "fa2383a6-3595-445f-a55c-9d657b4fed7b",
+					"name": "_id",
+					"datatype": "ObjectId",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "7566ecae-83ea-4a44-873b-fa00618d46d9",
+					"name": "category_name",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "ea812945-9b27-45c0-8587-73ab19e89d6e",
+					"name": "posts",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				}
+			],
+			"relations": [
+				"c7f01203-0fc8-4edc-9ff6-e6df59815789"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "b6b1276b-8217-4cad-9d62-0d9fc1803545",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "8e5ba2f8-a23b-4f88-9a14-140d5317e2f1",
+							"colid": "fa2383a6-3595-445f-a55c-9d657b4fed7b"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"internalColumnIdRef": "",
+			"others": ""
+		},
+		"e44a6fc6-3491-4d68-aed8-0d1069c0700b": {
+			"id": "e44a6fc6-3491-4d68-aed8-0d1069c0700b",
+			"visible": true,
+			"name": "posts",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "9eb2aefb-14bb-47d6-ac19-7b83f3444dbe",
+					"name": "_id",
+					"datatype": "ObjectId",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "5d5bf402-a5ce-4dd6-a7a3-a623f55fcc36",
+					"name": "title",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "269b1b59-d9e2-4f1f-8dab-bcbbf2d4ff2d",
+					"name": "description",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "90799e06-62ff-4db6-a91d-909b287d5f45",
+					"name": "post_date",
+					"datatype": "Date",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "dfc0de7b-5da4-4401-aec0-db0871ffd1aa",
+					"name": "post_img",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "f6283fb8-b7b7-4934-9221-7197e8504ae6",
+					"name": "category",
+					"datatype": "ObjectId",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "category",
+					"list": false
+				},
+				{
+					"id": "4601875b-d643-4d3f-a0b9-61a6236b4409",
+					"name": "author",
+					"datatype": "ObjectId",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "users"
+				}
+			],
+			"relations": [
+				"c7f01203-0fc8-4edc-9ff6-e6df59815789",
+				"ddd77549-873e-4eb4-9f73-5e3832872194"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "0c7b965f-b35b-49a0-8b80-777c4a670354",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "d64f1240-3a9a-49a5-8621-30068399bf9e",
+							"colid": "9eb2aefb-14bb-47d6-ac19-7b83f3444dbe"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"internalColumnIdRef": "",
+			"others": ""
+		}
+	},
+	"relations": {
+		"ddd77549-873e-4eb4-9f73-5e3832872194": {
+			"id": "ddd77549-873e-4eb4-9f73-5e3832872194",
+			"visible": true,
+			"name": "users_posts",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "6894ddd8-341c-42eb-8c02-2405fbfd547e",
+			"parent": "889080e5-f7c6-4055-a0c4-b5d921c1a56c",
+			"child": "e44a6fc6-3491-4d68-aed8-0d1069c0700b",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "b1d601f1-3e2b-4f96-bb8d-cb158e3c1d10",
+					"parentcol": "425e12a2-13dd-4b2c-85f6-ec5e27ff0458",
+					"childcol": "4601875b-d643-4d3f-a0b9-61a6236b4409"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"c7f01203-0fc8-4edc-9ff6-e6df59815789": {
+			"id": "c7f01203-0fc8-4edc-9ff6-e6df59815789",
+			"visible": true,
+			"name": "category_posts",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "b6b1276b-8217-4cad-9d62-0d9fc1803545",
+			"parent": "9384705a-e136-4217-9be5-2d5ea183ac7d",
+			"child": "e44a6fc6-3491-4d68-aed8-0d1069c0700b",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "a7d0fc94-3b7b-4bae-bb4d-dfdf709c5a19",
+					"parentcol": "fa2383a6-3595-445f-a55c-9d657b4fed7b",
+					"childcol": "f6283fb8-b7b7-4934-9221-7197e8504ae6"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		}
+	},
+	"notes": {},
+	"lines": {},
+	"model": {
+		"name": "new-blog",
+		"id": "dd1ba035-0824-4eb3-abbf-70055985cd74",
+		"activeDiagram": "45927e49-514d-43e4-a6a6-b05294a87afa",
+		"desc": "",
+		"path": "",
+		"type": "MONGOOSE",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": true,
+		"storedin": {
+			"major": 4,
+			"minor": 6,
+			"extra": 0
+		},
+		"embeddedInParentsIsDisplayed": true,
+		"schemaContainerIsDisplayed": false,
+		"cardinalityIsDisplayed": false,
+		"estimatedSizeIsDisplayed": false,
+		"stickyParentIsDisplayed": false,
+		"def_coltopk": true,
+		"def_others": ""
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"45927e49-514d-43e4-a6a6-b05294a87afa": {
+			"name": "Main Diagram",
+			"description": "",
+			"id": "45927e49-514d-43e4-a6a6-b05294a87afa",
+			"keysgraphics": true,
+			"linegraphics": "detailed",
+			"zoom": 1,
+			"background": "transparent",
+			"lineColor": "transparent",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"889080e5-f7c6-4055-a0c4-b5d921c1a56c": {
+					"referencedItemId": "889080e5-f7c6-4055-a0c4-b5d921c1a56c",
+					"x": 627,
+					"y": 263,
+					"gHeight": 135,
+					"gWidth": 194,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				},
+				"9384705a-e136-4217-9be5-2d5ea183ac7d": {
+					"referencedItemId": "9384705a-e136-4217-9be5-2d5ea183ac7d",
+					"x": 93,
+					"y": 80,
+					"gHeight": 81,
+					"gWidth": 220,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				},
+				"e44a6fc6-3491-4d68-aed8-0d1069c0700b": {
+					"referencedItemId": "e44a6fc6-3491-4d68-aed8-0d1069c0700b",
+					"x": 111,
+					"y": 266,
+					"gHeight": 153,
+					"gWidth": 197,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				}
+			},
+			"scroll": {
+				"x": 0,
+				"y": 0
+			},
+			"type": "erd"
+		}
+	},
+	"order": []
+}

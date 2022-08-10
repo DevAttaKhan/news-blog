@@ -1,0 +1,13 @@
+#header-admin {
+  background-color: #1e90ff;
+  padding: 15px 0;
+}
+
+#header-admin .admin-logout {
+  margin: 10px 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+}
