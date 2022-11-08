@@ -1,7 +1,9 @@
 import React from "react";
 import "./Pagination.css";
 
-const Pagination = () => {
+const Pagination = ({ pages }) => {
+  const numPages = Array(pages);
+  numPages.fill(3);
   return (
     <ul className="pagination">
       <li className="page-item">
@@ -9,21 +11,7 @@ const Pagination = () => {
           Previous
         </a>
       </li>
-      <li className="page-item">
-        <a className="page-link" href="/">
-          1
-        </a>
-      </li>
-      <li className="page-item">
-        <a className="page-link" href="/">
-          2
-        </a>
-      </li>
-      <li className="page-item">
-        <a className="page-link" href="/">
-          3
-        </a>
-      </li>
+
       <li className="page-item">
         <a className="page-link" href="/">
           Next

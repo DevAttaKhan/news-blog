@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./AdminMenuBar.css";
-
+import { useSelector } from "react-redux";
 const AdminMenuBar = () => {
+  const user = useSelector((state) => state.auth);
   return (
     <div id="admin-menubar">
       <div className="container">
@@ -15,16 +16,21 @@ const AdminMenuBar = () => {
                 </NavLink>
               </li>
 
-              <li>
-                <NavLink activeClassName="selected" to="/admin/category">
-                  Categories
-                </NavLink>
-              </li>
-              <li>
-                <NavLink activeClassName="selected" to="/admin/users">
-                  Users
-                </NavLink>
-              </li>
+              {user.role && (
+                <>
+                  {" "}
+                  <li>
+                    <NavLink activeClassName="selected" to="/admin/category">
+                      Categories
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink activeClassName="selected" to="/admin/users">
+                      Users
+                    </NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

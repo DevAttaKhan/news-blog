@@ -6,9 +6,7 @@ exports.getAllCategories = catchAsync(async (req, res) => {
 
   res.status(200).json({
     status: "success",
-    data: {
-      category
-    }
+    category
   });
 });
 
@@ -16,9 +14,7 @@ exports.getCategory = catchAsync(async (req, res) => {
   const category = await CategoryModal.findById(req.params.id);
   res.status(200).json({
     status: "success",
-    data: {
-      category
-    }
+    category
   });
 });
 
@@ -27,9 +23,7 @@ exports.createCategory = catchAsync(async (req, res) => {
 
   res.status(200).json({
     status: "success",
-    data: {
-      category: newCategory
-    }
+    category: newCategory
   });
 });
 
@@ -49,9 +43,7 @@ exports.updateCategory = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: "success",
-    data: {
-      category
-    }
+    category
   });
 });
 
@@ -59,8 +51,6 @@ exports.delteCategory = catchAsync(async (req, res) => {
   const category = await CategoryModal.findByIdAndDelete(req.params.id);
   res.status(200).json({
     status: "success",
-    data: {
-      category
-    }
+    category
   });
 });

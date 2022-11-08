@@ -28,7 +28,9 @@
   border: 1px solid #fff;
   text-align: center;
 }
-
+#admin-content .content-table tbody td button {
+  border: none;
+}
 #admin-content .content-table tbody tr:nth-child(2n) {
   background-color: transparent;
 }

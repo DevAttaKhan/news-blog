@@ -16,7 +16,8 @@ const userSchema = new mongoose.Schema({
     required: [true, "Please tell us your username"]
   },
   password: {
-    type: String
+    type: String,
+    required: [true, "A password is required"]
   },
   role: {
     type: Boolean,

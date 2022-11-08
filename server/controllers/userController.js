@@ -2,13 +2,21 @@ const User = require("../models/userModal");
 const catchAsync = require("../utils/catchAsync");
 
 exports.getAllUsers = catchAsync(async function(req, res) {
-  const data = await User.find();
-  res.status(200).json({
-    status: "success",
-    data: {
-      users: data
-    }
-  });
+  if (req.token.role) {
+    const data = await User.find()
+      .skip(+req.query.page)
+      .limit(3);
+
+    const ResultLength = await User.countDocuments();
+    const totalPages = Math.ceil(+ResultLength / 3);
+    res
+      .set("x-total-length", totalPages)
+      .status(200)
+      .json({
+        status: "success",
+        users: data
+      });
+  }
 });
 
 exports.createUser = catchAsync(async (req, res) => {
@@ -16,11 +24,9 @@ exports.createUser = catchAsync(async (req, res) => {
 
   const newUser = await User.create(req.body);
 
-  res.status(200).json({
+  res.status(201).json({
     status: "success",
-    data: {
-      user: newUser
-    }
+    data: newUser
   });
 });
 
@@ -50,9 +56,7 @@ exports.updateUser = catchAsync(async (req, res, next) => {
   }
   res.status(200).json({
     status: "success",
-    data: {
-      user
-    }
+    data: user
   });
 });
 

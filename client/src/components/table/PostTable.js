@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllPosts, deletePost } from "../../store/actions/index.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./Table.css";
 const PostTable = () => {
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.posts.posts);
+  const user = useSelector((state) => state.auth);
+  useEffect(() => {
+    dispatch(getAllPosts(user.token));
+  }, [dispatch, user]);
+
+  const handelEdit = (id) => {};
+
+  const handelDelete = (id) => {
+    dispatch(deletePost(id));
+  };
+
+  console.log(posts);
   return (
     <table className="content-table">
       <thead>
@@ -17,23 +33,33 @@ const PostTable = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td className="id">1</td>
-          <td>some thing</td>
-          <td>Entertainment</td>
-          <td>21 03,2022</td>
-          <td>atk</td>
-          <td className="edit">
-            <a href="update-post.php?id=36">
-              <FontAwesomeIcon icon={faEdit} />
-            </a>
-          </td>
-          <td className="delete">
-            <a href="delete-post.php?id=36&amp;catid=2">
-              <FontAwesomeIcon icon={faTrash} />
-            </a>
-          </td>
-        </tr>
+        {posts.map((el, i) => {
+          return (
+            <tr key={el._id}>
+              <td className="id">{i + 1}</td>
+              <td>{el.title}</td>
+              <td>{el.category.category_name}</td>
+              <td>
+                {new Date(el.post_date).toLocaleDateString("en-us", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </td>
+              <td>{el.author.username}</td>
+              <td className="edit">
+                <button onClick={() => handelEdit(el._id)}>
+                  <FontAwesomeIcon icon={faEdit} />
+                </button>
+              </td>
+              <td className="delete">
+                <button onClick={() => handelDelete(el._id)}>
+                  <FontAwesomeIcon icon={faTrash} />
+                </button>
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );

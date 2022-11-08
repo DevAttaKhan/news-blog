@@ -1,46 +1,51 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTags, faUser, faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 import "./PostContainer.css";
-import postImg from "./post_1.jpg";
 
-const PostContainer = () => {
+const PostContainer = ({
+  title,
+  category,
+  author,
+  date,
+  description,
+  img,
+  id,
+}) => {
   return (
     <div className="post-content">
       <div className="row">
         <div className="col-md-4">
-          <a className="post-img" href="single.php?pid=31">
-            <img src={postImg} alt="" />
-          </a>
+          <Link className="post-img" to={`/details/${id}`}>
+            <img src={img} alt="" />
+          </Link>
         </div>
         <div className="col-md-8">
           <div className="inner-content clearfix">
             <h3>
-              <a href="single.php?pid=31">third post</a>
+              <Link to={`/details/${id}`}>{title}</Link>
             </h3>
             <div className="post-information">
               <span>
                 <FontAwesomeIcon icon={faTags} />
 
-                <a href="category.php?cid=1">Politics </a>
+                <Link to={`/home/${category}`}>{category} </Link>
               </span>
               <span>
                 <FontAwesomeIcon icon={faUser} />
-                <a href="author.php?aid=5">Sali</a>
+                <Link to={`/home/${author}`}>{author}</Link>
               </span>
               <span>
                 <FontAwesomeIcon icon={faCalendar} />
-                17 03,2022
+                {date}
               </span>
             </div>
-            <p className="description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptatem explicabo suscipit deserunt, qu{" "}
-            </p>
-            <a className="read-more pull-right" href="single.php?pid=31">
+            <p className="description">{description}</p>
+            <Link className="read-more pull-right" to={`/details/${id}`}>
               read more
-            </a>
+            </Link>
           </div>
         </div>
       </div>

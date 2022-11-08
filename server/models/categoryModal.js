@@ -7,12 +7,8 @@ const categorySchema = new mongoose.Schema({
   },
   posts: {
     type: Number,
-    required: [true, "post field is required"]
+    default: 0
   }
-});
-
-categorySchema.pre("save", function() {
-  console.log("pre hook", this.posts);
 });
 
 const Category = mongoose.model("Category", categorySchema);

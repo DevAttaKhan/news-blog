@@ -10,20 +10,23 @@ const postSchema = new mongoose.Schema({
     required: true
   },
   post_date: {
-    type: Date
+    type: Date,
+    default: new Date()
   },
   post_img: {
     type: String
   },
   category: {
-    type: mongoose.Schema.ObjectId,
+    type: mongoose.Types.ObjectId,
     ref: "Category"
   },
   author: {
-    type: mongoose.Schema.ObjectId,
+    type: mongoose.Types.ObjectId,
     ref: "User"
   }
 });
+
+postSchema.index({ "$**": "text" });
 
 const Post = mongoose.model("Post", postSchema);
 

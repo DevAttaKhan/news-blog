@@ -1,11 +1,11 @@
 import React from "react";
-import AddPostForm from "../../../components/addPostForm/AddPostForm";
+import AddUpdatePostForm from "../../../components/addUpdatePostForm/AddUpdatePostForm";
 import AdminContent from "../../../components/layout/AdminContent";
 
 const AddPost = () => {
   return (
     <AdminContent title="Add new post">
-      <AddPostForm />
+      <AddUpdatePostForm />
     </AdminContent>
   );
 };

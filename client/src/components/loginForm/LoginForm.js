@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/actions/index";
 import "./LoginForm.css";
 import logo from "../header/news.jpg";
 const LoginForm = () => {
+  const dispatch = useDispatch();
+  const [loginValues, setLoginValues] = useState({
+    username: "",
+    password: "",
+  });
+
   const history = useHistory();
 
-  const handleSubmit = () => {
-    history.push("/admin");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(login(loginValues, history));
+  };
+
+  const handelChange = (e) => {
+    const newLoginValues = { ...loginValues };
+    newLoginValues[e.target.name] = e.target.value;
+    setLoginValues(newLoginValues);
   };
 
   return (
@@ -21,8 +37,8 @@ const LoginForm = () => {
             type="text"
             name="username"
             className="form-control"
-            placeholder=""
-            required=""
+            value={loginValues.username}
+            onChange={handelChange}
           />
         </div>
         <div className="form-group">
@@ -31,8 +47,8 @@ const LoginForm = () => {
             type="password"
             name="password"
             className="form-control"
-            placeholder=""
-            required=""
+            onChange={handelChange}
+            value={loginValues.password}
           />
         </div>
         <button className="btn btn-primary">LogIn</button>

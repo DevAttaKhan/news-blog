@@ -1,27 +1,30 @@
 import React from "react";
 import "./recentPost.css";
-import postImg from "./post-format.jpg";
-const RecentPost = () => {
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTags, faCalendar } from "@fortawesome/free-solid-svg-icons";
+const RecentPost = ({ title, category, date, img, id }) => {
   return (
     <div className="recent-post">
       <a className="post-img" href="/">
-        <img src={postImg} alt="" />
+        <img src={img} alt="" />
       </a>
       <div className="post-content">
         <h5>
-          <a href="single.php?pid=36">some thing</a>
+          <a href="single.php?pid=36">{title}</a>
         </h5>
         <span>
-          <i className="fa fa-tags" aria-hidden="true"></i>
-          <a href="category.php?cid=2">Entertainment</a>
+          <FontAwesomeIcon icon={faTags} />
+
+          <a href="category.php?cid=2">{category}</a>
         </span>
         <span>
-          <i className="fa fa-calendar" aria-hidden="true"></i>
-          21 03,2022{" "}
+          <FontAwesomeIcon icon={faCalendar} />
+          {date}
         </span>
-        <a className="read-more" href="single.php?pid=36">
+        <Link className="read-more" to={`detail/${id}`}>
           read more
-        </a>
+        </Link>
       </div>
     </div>
   );

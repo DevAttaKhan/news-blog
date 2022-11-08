@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import "./AdminHeader.css";
 import logo from "./news.jpg";
-
 const AdminHeader = () => {
+  const user = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token === "undefined") {
+      localStorage.setItem("token", user.token);
+    }
+  }, [user]);
+
   return (
     <div id="header-admin">
       <div className="container">
@@ -14,9 +23,7 @@ const AdminHeader = () => {
           </div>
 
           <div>
-            <a href="logout.php" className="admin-logout">
-              atk logout
-            </a>
+            <button>{user.username}</button>
           </div>
         </div>
       </div>
