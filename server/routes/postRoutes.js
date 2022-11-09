@@ -28,7 +28,7 @@ router.route("/recent").get(postController.getRecentPosts);
 router
   .route("/:id")
   .get(postController.getPost)
-  .patch(postController.updatePost)
+  .patch(upload.single("post_img"), postController.updatePost)
   .delete(postController.deletePost);
 
 module.exports = router;

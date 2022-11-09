@@ -21,7 +21,7 @@ const SearchBox = () => {
   useEffect(() => {
     if (!debounceSearchQuery) return;
     dispatch(getPublicPosts(null, null, debounceSearchQuery));
-  }, [debounceSearchQuery]);
+  }, [debounceSearchQuery, dispatch]);
 
   return (
     <div className="search-box-container">

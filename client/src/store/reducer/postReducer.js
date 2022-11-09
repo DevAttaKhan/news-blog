@@ -11,7 +11,10 @@ const Reducer = (state = initialState, action) => {
         totalPages: action.payload.totalPages,
       };
     case "DELETE_POST":
-      return state.filter((el) => el._id !== action.payload);
+      return {
+        ...state,
+        posts: state.posts.filter((el) => el._id !== action.payload),
+      };
 
     default:
       return state;

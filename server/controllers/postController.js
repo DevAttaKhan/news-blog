@@ -177,11 +177,25 @@ exports.getPost = catchAsync(async (req, res) => {
 });
 
 exports.updatePost = catchAsync(async (req, res) => {
-  const post = await Post.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true
-  });
-  console.log(req.params.id, req.body);
+  const { title, description, category, author } = req.body;
+  const { fieldname, filename } = req.file;
+  const post = await Post.findByIdAndUpdate(
+    req.params.id,
+    {
+      title,
+      description,
+      category,
+      author,
+      [fieldname]: `http://localhost:3002/images/${filename.replaceAll(
+        " ",
+        "-"
+      )}`
+    },
+    {
+      new: true,
+      runValidators: true
+    }
+  );
 
   sendStatus(res, post, "success");
 });

@@ -237,6 +237,25 @@ export const addPost = (data, token, history) => (dispatch) => {
     })
     .catch((err) => console.log(err));
 };
+export const updatePost = (id, data, token, history) => (dispatch) => {
+  axios({
+    method: "patch",
+    url: `http://localhost:3002/blog/v1/post/${id}`,
+    data: data,
+    headers: {
+      "Content-Type": "multipart/form-data",
+      authorization: "Bearer " + token,
+    },
+  })
+    .then((res) => {
+      dispatch({
+        type: "ADD_POST",
+        action: res.data.data,
+      });
+      history.replace("/admin/allposts");
+    })
+    .catch((err) => console.log(err));
+};
 
 export const deletePost = (id, token) => (dispatch) => {
   baseURL
@@ -250,6 +269,7 @@ export const deletePost = (id, token) => (dispatch) => {
         type: "DELETE_POST",
         payload: id,
       });
+      dispatch(getAllPosts(token, 0));
     })
     .catch((err) => console.log(err));
 };

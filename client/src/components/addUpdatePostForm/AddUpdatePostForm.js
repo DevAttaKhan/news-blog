@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { addPost } from "../../store/actions/index";
+import { addPost, updatePost } from "../../store/actions/index";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import "./AddPostForm.css";
 
-const AddUpdatePostForm = () => {
-  const [categories, setCategories] = useState([]);
-  const [postValues, setPostValues] = useState({});
-  const user = useSelector((state) => state.auth);
+const AddUpdatePostForm = ({ id }) => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const currentPost = useSelector(({ posts }) =>
+    posts.posts.find((el) => el._id === id)
+  );
+
+  const [categories, setCategories] = useState([]);
+  const [postValues, setPostValues] = useState(currentPost || {});
+  const user = useSelector((state) => state.auth);
 
   useEffect(() => {
     axios
@@ -42,8 +46,11 @@ const AddUpdatePostForm = () => {
     data.append("description", postValues.description);
     data.append("category", postValues.category);
     data.append("post_img", postValues.post_img);
-
-    dispatch(addPost(data, user.token, history));
+    if (id && currentPost) {
+      dispatch(updatePost(id, data, user.token, history));
+    } else {
+      dispatch(addPost(data, user.token, history));
+    }
   };
 
   return (
@@ -60,6 +67,7 @@ const AddUpdatePostForm = () => {
           className="form-control"
           autoComplete="off"
           onChange={handelChange}
+          value={postValues.title}
         />
       </div>
       <div className="form-group">
@@ -68,6 +76,7 @@ const AddUpdatePostForm = () => {
           name="description"
           className="form-control"
           rows="5"
+          value={postValues.description}
           onChange={handelChange}
         ></textarea>
       </div>
@@ -77,6 +86,7 @@ const AddUpdatePostForm = () => {
           name="category"
           className="form-control"
           onChange={handelChange}
+          value={postValues.category}
         >
           <option disabled=""> Select Category</option>
           {categories.map((el) => (

@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllPosts, deletePost } from "../../store/actions/index.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom";
 import "./Table.css";
 const PostTable = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
   const user = useSelector((state) => state.auth);
@@ -12,13 +14,14 @@ const PostTable = () => {
     dispatch(getAllPosts(user.token));
   }, [dispatch, user]);
 
-  const handelEdit = (id) => {};
+  const handelEdit = (id) => {
+    history.push("add-post/" + id);
+  };
 
   const handelDelete = (id) => {
     dispatch(deletePost(id));
   };
 
-  console.log(posts);
   return (
     <table className="content-table">
       <thead>

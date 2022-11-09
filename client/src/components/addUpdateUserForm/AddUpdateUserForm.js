@@ -10,7 +10,7 @@ const AddUpdateUserForm = () => {
   const dispatch = useDispatch();
   const [userData, setUserData] = useState({ role: "false" });
   const editUser = useSelector((state) =>
-    state.users.find((el) => el._id === id)
+    state.users.users.find((el) => el._id === id)
   );
   const token = useSelector((state) => state.auth);
   useEffect(() => {

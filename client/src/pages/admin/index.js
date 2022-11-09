@@ -27,6 +27,9 @@ const Admin = () => {
         <Route path={`${path}/allposts`}>
           <AllPosts />
         </Route>
+        <Route path={`${path}/add-post/:id`}>
+          <AddPost />
+        </Route>
         <Route path={`${path}/add-post`}>
           <AddPost />
         </Route>
